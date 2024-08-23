@@ -1,0 +1,1694 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container .logo img {
+    max-height: 50px;
+    border-radius: 8px;
+}
+
+.header-container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul.left-icons {
+    margin-right: auto;
+}
+
+nav ul.right-icons {
+    margin-left: auto;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav button:hover {
+    color: #ff4081;
+    transform: scale(1.1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #444;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 250px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    color: #fff;
+    padding: 0.5rem;
+    width: 80%;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: 1rem;
+}
+
+
+.right-icons button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.right-icons i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 50px;
+    width: 200px;
+    transition: width 0.3s ease;
+    color: black;
+}
+
+.search-bar input:focus {
+    width: 250px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    color: #0056b3;
+}
+
+
+main {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 1rem;
+    flex: 1;
+}
+
+aside {
+    flex: 1;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+aside h2 {
+    margin-top: 0;
+}
+
+section#catalog {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+section#figures {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.figure {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: calc(33% - 2rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.figure:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.figure img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+#cart {
+    flex: 1;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#figureModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#figureModal>div {
+    background: white;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+}
+
+#figureModal img {
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+    background-color: #45a049;
+}
+
+.modal-buttons button.close {
+    background-color: #f44336;
+}
+
+.modal-buttons button.close:hover {
+    background-color: #e53935;
+}
+
+#cart button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cart button:hover,
+#catalog button:hover {
+    background-color: #45a049;
+}
+
+#cart button.clear {
+    background-color: #f44336;
+}
+
+#cart button.clear:hover {
+    background-color: #e53935;
+}
+
+#cart-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #010101;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#cart-button:hover {
+    background-color: #45a049;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+
+nav ul li button:hover {
+    color: #61dafb;
+    transform: translateY(-2px);
+}
+
+nav ul li button:focus {
+    outline: none;
+}
+
+
+nav ul li button:hover {
+    color: #61dafb;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+}
+
+aside {
+    flex: 1;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+aside h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 0.5rem;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin: 0.5rem 0;
+}
+
+aside ul li button {
+    background: #61dafb;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+aside ul li button:hover {
+    background-color: #4fa3c1;
+}
+
+
+.figure {
+    background-color: #ffffff;
+    border: 3px solid transparent;
+    padding: 1rem;
+    width: calc(33.33% - 2rem);
+    /* Ajuste para mostrar 3 figuras por fila */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    background-clip: padding-box;
+    margin-bottom: 2rem;
+    /* Añadir espacio entre filas */
+}
+
+
+.figure::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #ff0000, #00ff99);
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 14px;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.figure:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.figure img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.figure h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.figure p {
+    margin: 0.5rem 0;
+}
+
+#cart {
+    flex: 1;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: none;
+}
+
+#cart h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    border-bottom: 2px solid #ebebeb;
+    padding-bottom: 0.75rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-buttons button {
+    background-color: #61dafb;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+    background-color: #4fa3c1;
+}
+
+.modal-buttons button.close {
+    background-color: #f44336;
+}
+
+.modal-buttons button.close:hover {
+    background-color: #e53935;
+}
+
+
+#ccc {
+    background-color: #61dafb;
+    /* Color de fondo principal */
+    color: #ffffff;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    padding: 0.75rem;
+    /* Espaciado mejorado */
+    border-radius: 6px;
+    /* Bordes más redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Transición suave */
+    font-size: 1rem;
+    /* Tamaño del texto */
+    font-weight: 600;
+    /* Peso del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+}
+
+#catalog button:hover {
+    background-color: #4fa3c5;
+    /* Color más oscuro al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Sombra más pronunciada */
+}
+
+#catalog button:focus {
+    outline: none;
+    /* Quita el borde de enfoque predeterminado */
+    box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.5);
+    /* Resalta el botón con un borde de enfoque */
+}
+
+
+#cart button:hover,
+#catalog button:hover {
+    background-color: #4fa3c1;
+}
+
+#cart button.clear {
+    background-color: #f44336;
+}
+
+#cart button.clear:hover {
+    background-color: #e53935;
+}
+
+#cart-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #61dafb;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+/* Contenedor del modal con perspectiva 3D y colores añadidos */
+#figureModal>div {
+    width: 600px;
+    padding: 20px;
+    perspective: 1000px;
+    /* Define el punto de vista para los efectos 3D */
+    background: linear-gradient(135deg, #e0e0e0 18.75%, #ffffff 0 31.25%, #e0e0e0 0),
+        repeating-linear-gradient(45deg, #ffffff -6.25% 6.25%, #f0f0f0 0 18.75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 0;
+    background-color: #f0f0f0;
+    box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+    border: 3px solid #007bff;
+    /* Color azul para los bordes */
+    border-radius: 15px;
+    /* Ajuste opcional */
+    transform-style: preserve-3d;
+    /* Asegura que los hijos hereden el estilo 3D */
+    transition: transform 0.5s ease-in-out, background-position 0.5s ease-in-out;
+}
+
+/* Efecto 3D en hover */
+#figureModal>div:hover {
+    background-position: -100px 100px, -100px 100px;
+    transform: rotateY(20deg) rotateX(20deg);
+    /* Rotaciones en 3D más pronunciadas */
+}
+
+/* Estilo de la imagen */
+#figureModal img {
+    max-width: 500%;
+    max-height: 450px;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 20px 15px -5px;
+    /* Sombras más intensas */
+    transform-style: preserve-3d;
+    /* Asegura el estilo 3D en la imagen */
+}
+
+/* Contenido del modal */
+#figureModal .content {
+    background: rgba(4, 193, 250, 0.8);
+    /* Fondo con color azul */
+    padding: 20px;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    position: relative;
+    /* Asegura apilamiento correcto */
+    z-index: 2;
+    /* Asegura que esté encima del fondo */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Efecto 3D en el contenido */
+#figureModal .content:hover {
+    transform: translateZ(20px);
+    /* Mueve el contenido hacia el usuario */
+}
+
+/* Estilo del título */
+#figureModal .content h2 {
+    color: #007bff;
+    /* Color azul para el título */
+    font-size: 28px;
+    font-weight: 900;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease-in-out;
+    transform: translateZ(30px);
+    /* Mueve el título hacia el usuario */
+}
+
+/* Efecto 3D en el título en hover */
+#figureModal .content h2:hover {
+    transform: translateZ(50px);
+}
+
+/* Estilo del párrafo */
+#figureModal .content p {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    /* Texto blanco */
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease-in-out;
+    transform: translateZ(20px);
+    /* Mueve el párrafo hacia el usuario */
+}
+
+/* Efecto 3D en el párrafo en hover */
+#figureModal .content p:hover {
+    transform: translateZ(40px);
+}
+
+/* Estilo del botón 'Ver más' */
+#figureModal .content .see-more {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #007bff;
+    /* Color azul para el texto del botón */
+    background: #ffffff;
+    /* Fondo blanco para el botón */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    /* Borde azul para el botón */
+    transition: transform 0.5s ease-in-out;
+    transform: translateZ(10px);
+    /* Mueve el botón hacia el usuario */
+}
+
+/* Efecto 3D en el botón en hover */
+#figureModal .content .see-more:hover {
+    transform: translateZ(30px);
+    background: #007bff;
+    /* Fondo azul para el botón en hover */
+    color: #ffffff;
+    /* Texto blanco para el botón en hover */
+}
+
+/* Estilo del botón de cierre */
+#figureModal .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ffffff;
+    /* Fondo blanco para el botón de cierre */
+    color: #007bff;
+    /* Color azul para el texto del botón de cierre */
+    border: 1px solid #007bff;
+    /* Borde azul para el botón de cierre */
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.5s ease-in-out;
+    transform: translateZ(40px);
+    /* Mueve el botón hacia el usuario */
+    z-index: 3;
+    /* Asegura que esté encima de otros elementos */
+}
+
+/* Efecto 3D en el botón de cierre en hover */
+#figureModal .close-btn:hover {
+    background: #007bff;
+    /* Fondo azul para el botón de cierre en hover */
+    color: #ffffff;
+    /* Texto blanco para el botón de cierre en hover */
+}
+
+
+#aaa {
+    font-size: 10px;
+    background-color: blue;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#fix {
+    position: fixed;
+    bottom: 6rem;
+    right: 1rem;
+    background-color: #ff4081;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 9999;
+    /* Asegura que el botón esté al frente */
+}
+
+#fixed {
+    position: fixed;
+    bottom: 10rem;
+    right: 1rem;
+    background-color: #ff4081;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 9999;
+    /* Asegura que el botón esté al frente */
+}
+
+#fixed,
+#fix,
+#aaa:hover {
+    background-color: #ff1e70;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+#fixed,
+#fix,
+#aaa:active {
+    background-color: #e91e63;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#fixed,
+#fix,
+#aaa:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 64, 129, 0.4);
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 1rem;
+}
+
+.footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #e2b646;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #e2b646;
+    text-decoration: underline;
+}
+
+.social-icons a {
+    color: #e2b646;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #444;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+
+
+/* Estilos para los modales */
+.modal {
+    display: none;
+    /* Oculta el modal por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro semitransparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.google-btn {
+    background-color: #db4437;
+}
+
+.facebook-btn {
+    background-color: #4267b2;
+}
+
+.email-btn {
+    background-color: #007bff;
+}
+
+.login-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.login-btn:hover {
+    background-color: #555;
+}
+
+.modal-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #fff);
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+.modal-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #fff);
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.notification-container {
+    max-height: 300px;
+    /* Ajusta según sea necesario */
+    overflow-y: auto;
+    /* Habilita el desplazamiento vertical si hay muchas notificaciones */
+}
+
+.notification {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.notification.success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.notification.info {
+    border-color: #17a2b8;
+    color: #17a2b8;
+}
+
+.notification.warning {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.notification .close-notification {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Para pantallas con un ancho máximo de 760px */
+@media (max-width: 760px) {
+
+    /* Estilos generales para el header */
+    .header-container {
+        flex-direction: column;
+        padding: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .header-container h1 {
+        font-size: 1.5rem;
+        margin: 0.75rem 0;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul.left-icons,
+    nav ul.right-icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0.75rem 0;
+    }
+
+    nav ul.left-icons li,
+    nav ul.right-icons li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0.75rem 0;
+    }
+
+    .search-bar input {
+        width: calc(100% - 2.5rem);
+        margin-bottom: 0.75rem;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .search-bar button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* Estilos de los botones del nav */
+    nav button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    nav button i {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes en los íconos */
+    nav ul li i {
+        font-size: 1.4rem;
+    }
+
+    nav button:hover {
+        color: #ff4081;
+        transform: scale(1.05);
+    }
+
+    section#catalog {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    aside,
+    #cart {
+        width: 100%;
+    }
+
+    section#figures {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .figure {
+        width: calc(100% - 2.5rem);
+    }
+
+    .search-bar input[type="text"] {
+        width: 180px;
+    }
+
+    #figureModal>div {
+        width: 95%;
+        /* Ajustar el ancho del modal */
+        padding: 12px;
+        /* Reducir el padding */
+        background-size: 35px 35px;
+        /* Ajustar el tamaño del fondo de gradiente */
+        border: 2px solid #007bff;
+        /* Ajustar el grosor del borde */
+        box-shadow: rgba(142, 142, 142, 0.3) 0px 20px 20px -10px;
+        /* Reducir la sombra */
+    }
+
+    #figureModal img {
+        max-width: 100%;
+        /* Ajustar la imagen al ancho máximo del contenedor */
+        max-height: 300px;
+        /* Ajustar la altura máxima de la imagen */
+    }
+
+    #figureModal .content {
+        padding: 12px;
+        /* Reducir el padding del contenido */
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        /* Colocar los botones en una columna para que se ajusten mejor a pantallas pequeñas */
+        gap: 0.75rem;
+        /* Reducir el espacio entre los botones */
+        margin-top: 0.75rem;
+        /* Reducir el margen superior */
+    }
+
+    .modal-buttons button {
+        width: 85%;
+        /* Hacer que los botones ocupen todo el ancho del contenedor */
+        padding: 12px;
+        /* Reducir el padding para que los botones no sean demasiado grandes */
+    }
+
+    #quantity {
+        width: 85%;
+    }
+
+    #cart {
+        padding: 0.75rem;
+        /* Reducir el padding para pantallas más pequeñas */
+    }
+
+    #cart h2 {
+        font-size: 1.4rem;
+        /* Ajustar el tamaño del texto para que se ajuste mejor */
+        font-weight: 600;
+        border-bottom: 1px solid #ebebeb;
+        /* Reducir el grosor del borde */
+        padding-bottom: 0.75rem;
+        /* Reducir el padding inferior para una mejor presentación en pantallas pequeñas */
+    }
+
+    table {
+        width: 100%;
+        /* La tabla ocupará todo el ancho disponible */
+        border-collapse: collapse;
+        /* Elimina espacios entre las celdas */
+    }
+
+    th,
+    td {
+        font-size: 0.9rem;
+        /* Tamaño de texto ajustado */
+        padding: 0.75rem;
+        /* Espacio alrededor del contenido */
+        text-align: center;
+        /* Alineación central para mejor presentación */
+    }
+
+    th {
+        background-color: #f2f2f2;
+        /* Fondo diferente para encabezados */
+        font-weight: bold;
+    }
+
+    td img {
+        max-width: 120px;
+        /* Tamaño máximo de la imagen */
+        max-height: 120px;
+        margin: 0 auto;
+        /* Centra la imagen */
+        display: block;
+        /* Imagen como bloque para un mejor control */
+    }
+
+    td button {
+        font-size: 0.85rem;
+        /* Tamaño de texto reducido en botones */
+        padding: 0.5rem;
+        /* Espacio interno de los botones */
+    }
+
+    /* Ajustes para celdas específicas */
+    td:first-child,
+    th:first-child {
+        width: 120px;
+        /* Asegura espacio suficiente para la imagen */
+    }
+
+    td:last-child,
+    th:last-child {
+        width: 80px;
+        /* Ajusta el ancho de la columna de eliminar */
+    }
+
+    #cart-button {
+        padding: 0.75rem 1.5rem;
+        /* Ajustar el padding para pantallas medianas */
+        font-size: 1rem;
+        /* Ajustar el tamaño del texto del botón */
+    }
+
+    section#catalog {
+        gap: 0.5rem;
+    }
+
+    section#figures {
+        gap: 0.5rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* Para teléfonos móviles (ancho máximo de 400px) */
+@media (max-width: 400px) {
+
+    /* Estilos generales para el header */
+    .header-container {
+        flex-direction: column;
+        padding: 1rem;
+        align-items: flex-start;
+    }
+
+    .header-container h1 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul.left-icons,
+    nav ul.right-icons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    nav ul.left-icons li,
+    nav ul.right-icons li {
+        flex: 1;
+        text-align: center;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .search-bar input {
+        width: calc(100% - 2rem);
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .search-bar button {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Estilos de los botones del nav */
+    nav button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    nav button i {
+        font-size: 1rem;
+    }
+
+    /* Ajustes en los íconos */
+    nav ul li i {
+        font-size: 1.2rem;
+    }
+
+    nav button:hover {
+        color: #ff4081;
+        transform: scale(1.05);
+    }
+
+    section#catalog {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    aside,
+    #cart {
+        width: 100%;
+    }
+
+    section#figures {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .figure {
+        width: calc(100% - 2rem);
+    }
+
+    .search-bar input[type="text"] {
+        width: 150px;
+    }
+
+    #figureModal>div {
+        width: 96%;
+        /* Ajustar el ancho del modal al 95% del ancho de la pantalla */
+        padding: 10px;
+        /* Reducir el padding */
+        background-size: 30px 30px;
+        /* Reducir el tamaño del fondo de gradiente */
+        border: 2px solid #007bff;
+        /* Ajustar el grosor del borde */
+        box-shadow: rgba(142, 142, 142, 0.3) 0px 20px 20px -10px;
+        /* Reducir la sombra */
+    }
+
+    #figureModal img {
+        max-width: 100%;
+        /* Ajustar la imagen al ancho máximo del contenedor */
+        max-height: 250px;
+        /* Reducir la altura máxima de la imagen */
+
+    }
+
+    #figureModal .content {
+        padding: 10px;
+        /* Reducir el padding del contenido */
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        /* Colocar los botones en una columna para que se ajusten mejor a pantallas pequeñas */
+        gap: 0.5rem;
+        /* Reducir el espacio entre los botones */
+        margin-top: 0.5rem;
+        /* Reducir el margen superior */
+    }
+
+    .modal-buttons button {
+        width: 80%;
+        /* Hacer que los botones ocupen todo el ancho del contenedor */
+        padding: 10px;
+        /* Reducir el padding para que los botones no sean demasiado grandes */
+    }
+
+    #quantity {
+        width: 80%;
+    }
+
+    #cart {
+        padding: 0.5rem;
+        /* Reduce el padding para pantallas más pequeñas */
+    }
+
+    #cart h2 {
+        font-size: 1.25rem;
+        /* Reduce el tamaño del texto para que se ajuste mejor */
+        font-weight: 600;
+        border-bottom: 1px solid #ebebeb;
+        /* Reduce el grosor del borde */
+        padding-bottom: 0.5rem;
+        /* Reduce el padding inferior para una mejor presentación en pantallas pequeñas */
+    }
+
+    table {
+        width: 100%;
+        /* La tabla ocupará todo el ancho disponible */
+        border-collapse: collapse;
+        /* Elimina espacios entre las celdas */
+    }
+
+    th,
+    td {
+        font-size: 0.75rem;
+        /* Tamaño de texto reducido */
+        padding: 0.5rem;
+        /* Espacio alrededor del contenido */
+        text-align: center;
+        /* Alineación central */
+    }
+
+    th {
+        background-color: #f2f2f2;
+        /* Fondo diferente para encabezados */
+        font-weight: bold;
+        font-size: 0.8rem;
+        /* Tamaño de fuente ligeramente mayor para encabezados */
+    }
+
+    td img {
+        max-width: 80px;
+        /* Tamaño máximo de la imagen */
+        max-height: 80px;
+        margin: 0 auto;
+        /* Centra la imagen */
+        display: block;
+        /* Imagen como bloque para un mejor control */
+    }
+
+    td button {
+        font-size: 0.75rem;
+        /* Tamaño de texto reducido en botones */
+        padding: 0.25rem 0.5rem;
+        /* Espacio interno de los botones */
+    }
+
+    /* Ajustes para celdas específicas */
+    td:first-child,
+    th:first-child {
+        width: 100px;
+        /* Asegura espacio suficiente para la imagen */
+    }
+
+    td:last-child,
+    th:last-child {
+        width: 50px;
+        /* Ajusta el ancho de la columna de eliminar */
+    }
+
+    /* Mantiene la tabla con desplazamiento horizontal si es necesario */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #cart-button {
+        padding: 0.5rem 1rem;
+        /* Reduce el padding para pantallas muy pequeñas */
+        font-size: 0.875rem;
+        /* Ajusta el tamaño del texto del botón */
+    }
+
+
+    section#catalog {
+        gap: 0.25rem;
+    }
+
+    section#figures {
+        gap: 0.25rem;
+    }
+
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

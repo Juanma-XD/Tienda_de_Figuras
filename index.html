@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Tienda de Figuras de Acción</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="./Avergers/logo.png" alt="Logo Tienda" />
+            </div>
+            <h1>Epic Collectibles</h1>
+
+            <nav>
+
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar figuras..." />
+                    <button type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <ul class="left-icons">
+                    <li>
+                        <button id="show-catalog">
+                            <i class="fas fa-th-large"></i> Catálogo
+                        </button>
+                    </li>
+                </ul>
+                <ul class="right-icons">
+                    <li>
+                        <button id="show-cart">
+                            <i class="fa-solid fa-cart-shopping"></i> Carrito
+                        </button>
+                    </li>
+                    <li>
+                        <button id="show-notifications">
+                            <i class="fa-solid fa-bell"></i> Notificaciones
+                        </button>
+                    </li>
+                    <li>
+                        <button id="show-profile">
+                            <i class="fa-solid fa-user"></i> Cuenta
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Modales -->
+        <div id="catalogModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-catalog">&times;</span>
+                <h2>Catálogo</h2>
+
+                <button id="ccc" onclick="loadCategory('Marvel')">Marvel</button>
+                <button id="ccc" onclick="loadCategory('dc_comics')">DC Comics</button>
+                <button id="ccc" onclick="loadCategory('naruto')">Naruto</button>
+                <button id="ccc" onclick="loadCategory('one_piece')">One Piece</button>
+                <button id="ccc" onclick="loadCategory('star_wars')">Star Wars</button>
+
+            </div>
+        </div>
+        <div id="notificationsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-notifications">&times;</span>
+                <h2>Notificaciones</h2>
+                <div id="notification-container" class="notification-container">
+                    <!-- Notificaciones se agregarán aquí -->
+                </div>
+            </div>
+            <div class="modal-wave"></div>
+        </div>
+
+
+
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-profile">&times;</span>
+                <h2>Accede a Tu Cuenta</h2>
+                <p>Elige cómo te gustaría acceder a tu cuenta:</p>
+                <div class="login-options">
+                    <a href="https://myaccount.google.com/" target="_blank" class="login-btn google-btn">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsn_7YWUcHfdiZW2UrAM4XFj_2vk2Opk4mVA&s"
+                            alt="Google"> Acceder con Google
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" class="login-btn facebook-btn">
+                        <img src="https://c0.klipartz.com/pngpicture/780/252/gratis-png-oculus-rift-facebook-iconos-de-computadora-chef-de-belleza-thumbnail.png"
+                            alt="Facebook"> Acceder con Facebook
+                    </a>
+                    <a href="mailto:contact@example.com" class="login-btn email-btn">
+                        <img src="https://c0.klipartz.com/pngpicture/682/7/gratis-png-logotipo-de-gmail-correo-electronico-de-gmail-aol-mail-logo-de-outlook-com-gmail.png"
+                            alt="Email"> Acceder con Email
+                    </a>
+                </div>
+            </div>
+            <div class="modal-wave"></div>
+        </div>
+
+
+
+    </header>
+
+
+    <main>
+        <section id="catalog">
+            <aside>
+                <h2>Categorías</h2>
+                <ul>
+                    <li><button id="ccc" onclick="loadCategory('Marvel')">Marvel</button></li>
+                    <li><button id="ccc" onclick="loadCategory('dc_comics')">DC Comics</button></li>
+                    <li><button id="ccc" onclick="loadCategory('naruto')">Naruto</button></li>
+                    <li><button id="ccc" onclick="loadCategory('one_piece')">One Piece</button></li>
+                    <li><button id="ccc" onclick="loadCategory('star_wars')">Star Wars</button></li>
+                </ul>
+            </aside>
+            <button id="fixed" style="display: block;" onclick="showCart()"><i
+                    class="fa-solid fa-cart-shopping"></i></button>
+            <button id="fix" style="display: block;"> <i class="fas fa-th-large"></i></button>
+            <section id="figures">
+                <!-- Figuras se cargarán aquí -->
+            </section>
+        </section>
+        <section id="cart" style="display: none;">
+            <h2>Carrito de Compras</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>SubTotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Items del carrito se cargarán aquí -->
+                </tbody>
+            </table>
+            <p>Total: <span id="total">0</span></p>
+            <button class="clear" onclick="clearCart()">Vaciar Carrito</button>
+            <button onclick="confirmPurchase()">Confirmar Compra</button>
+            <button onclick="hideCart()">Cerrar Carrito</button>
+        </section>
+
+    </main>
+    <div id="figureModal" style="display: none;">
+        <div>
+            <img id="modal-image" src="" alt="Imagen de la figura">
+            <div>
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <p>Tamaño: <span id="modal-size"></span></p>
+                <p>Precio: <span id="modal-price"></span></p>
+                <label for="quantity">Cantidad:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <div class="modal-buttons">
+                    <button onclick="addToCartFromModal()">Añadir al Carrito</button>
+                    <button class="close" onclick="closeModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h4>Sobre Nosotros</h4>
+                <p>Somos una tienda dedicada a ofrecer las mejores figuras de acción del mercado. Nuestra misión es
+                    llevar la magia del coleccionismo a cada rincón.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad</p>
+                <p><i class="fas fa-phone"></i> +123 456 789</p>
+                <p><i class="fas fa-envelope"></i> contacto@tienda.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tienda de Figuras | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+        let total = 0;
+        let currentFigure = null;
+
+
+        const figures = {
+            Marvel: [
+                { name: "Iron Man", price: 30000, image: "https://i.pinimg.com/236x/f4/6f/e3/f46fe31785e2a6d0889f456b0178ec8e.jpg", description: "Iron Man figura de acción", size: "30 cm" },
+                { name: "Captain America", price: 28000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqDLTPcfCS9TeuU2IILBx_uRlwkYDsqb2x6JFsUAHFPyXx_lQt", description: "Captain America figura de acción", size: "28 cm" },
+                { name: "Thor", price: 32000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlOTBGQ9-0aqdM6ekbIvJIcHoAzS-GvfF10s0dv14J8Tk7gMkD", description: "Thor figura de acción", size: "32 cm" },
+                { name: "Hulk", price: 35000, image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRLIxLg_y5hI-C1Z9ZzkeluxT4YCvBJe1XVhCIHE5u8NblDU_lJ", description: "Hulk figura de acción", size: "35 cm" },
+                { name: "Black Widow", price: 29000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp2wsK2VYiSVTmDmFfRNZkUz6tPrGt3y6J3r12ZEVSMrO0CSOW", description: "Black Widow figura de acción", size: "29 cm" },
+                { name: "Spiderman", price: 55000, image: "https://i.pinimg.com/564x/36/f9/ba/36f9ba8d27cbc27f744d6afe677e0c5f.jpg", description: "Spiderman figura de acción", size: "40 cm" },
+                { name: "Thanos", price: 100000, image: "https://i.pinimg.com/564x/7a/e2/43/7ae243ef32a4500372a4ad694ef854fc.jpg", description: "Thanos figura de acción", size: "28 cm" },
+                { name: "Capitana Marvel", price: 85000, image: "https://i.pinimg.com/564x/c7/07/7d/c7077d9c0246042152018a54e3b48531.jpg", description: "Thor figura de acción", size: "32 cm" },
+                { name: "Black Panther", price: 35000, image: "https://i.pinimg.com/564x/6f/34/13/6f34130dde2f18a2763f4570c3be1d05.jpg", description: "Hulk figura de acción", size: "35 cm" },
+                { name: "Deadpool", price: 29000, image: "https://i.pinimg.com/564x/9a/81/e5/9a81e5bd1fee7a8964c9cf5deed17a41.jpg", description: "Deadpool figura de acción", size: "29 cm" },
+                { name: "Dr strange", price: 35000, image: "https://i.pinimg.com/564x/2f/18/d6/2f18d6334833e35742ae7a298cd63ccc.jpg", description: "Dr strange figura de acción", size: "35 cm" },
+                { name: "loky", price: 29000, image: "https://i.pinimg.com/564x/cf/da/ca/cfdaca9ab116bf9b8c278af32389442b.jpg", description: "Loky figura de acción", size: "29 cm" }
+            ],
+            dc_comics: [
+                { name: "Batman", price: 31000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJdxNjIyznFllFL-1pwkngklUJ7GfncH7-bubCadTnqQXvR7Wk", description: "Batman figura de acción", size: "31 cm" },
+                { name: "Superman", price: 33000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRpCi0lWMNxNflI60qfR28joQPMJg5bV1r3eTaFrDYMEkVQDiER", description: "Superman figura de acción", size: "33 cm" },
+                { name: "Wonder Woman", price: 34000, image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQrpYAvtGNlA6mEnSAyITDuoH0KnAB7rBj37vjOjiCsVRjB-kl", description: "Wonder Woman figura de acción", size: "34 cm" },
+                { name: "Flash", price: 30000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQlWNJsXQ9bPt0aQQo1JQBJL3JCUbKZ6PLu4zKM3PLaaE5yJB24", description: "Flash figura de acción", size: "30 cm" },
+                { name: "Aquaman", price: 32000, image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTmldWziDb4-EUY1zXiPH8BuIXWxSRu2kwX4QCAZuBNaFo7IV5a", description: "Aquaman figura de acción", size: "32 cm" },
+                { name: "Cyborg", price: 31000, image: "https://i.pinimg.com/564x/11/82/2e/11822e3f1131db307b72149151769718.jpg", description: "Cyborg figura de acción", size: "31 cm" },
+                { name: "SDarkseid", price: 33000, image: "https://i.pinimg.com/564x/a7/6c/80/a76c806381f83894fd5838c0e197894a.jpg", description: "Darkseid figura de acción", size: "33 cm" },
+                { name: "Shazam", price: 34000, image: "https://i.pinimg.com/564x/b6/2c/27/b62c27a6c4bfd150462b1b7800ce9a69.jpg", description: "Shazam figura de acción", size: "34 cm" },
+                { name: "Joker", price: 30000, image: "https://i.pinimg.com/564x/c7/84/5e/c7845edb6577efdcb1a505447192ca8a.jpg", description: "Joker de acción", size: "30 cm" },
+                { name: "Deathstroke", price: 32000, image: "https://i.pinimg.com/564x/65/e4/7c/65e47c2488c3fbf7b3566ad704f1dbb6.jpg", description: "Deathstroke figura de acción", size: "32 cm" },
+                { name: "Batman que RieBatman que Rie", price: 30000, image: "https://i.pinimg.com/564x/62/90/c0/6290c010b2aaa55e77bf937665c1a0b8.jpg", description: " Batman que Rie figura de acción", size: "30 cm" },
+                { name: "Villamn", price: 32000, image: "https://i.pinimg.com/564x/8b/0d/91/8b0d918c7358360a0ecf9eac781ee39f.jpg", description: "Figyruia que muestra todo los villanos que enfrenta al muerelog todas la noches", size: "32 cm" }
+            ],
+            naruto: [
+                { name: "Naruto Uzumaki", price: 31000, image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT1aLNIsXAqrYyqq9IGSsfkhdZHD77pa9hQgFGQaQAeKwNMi2Xs", description: "Naruto Uzumaki figura de acción", size: "31 cm" },
+                { name: "Sasuke Uchiha", price: 32000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTW59111okmJL-14nMVe9o43PGY9T0X6mfS8G3tMqFe_7bWN6Zl", description: "Sasuke Uchiha figura de acción", size: "32 cm" },
+                { name: "Madara Uchiha", price: 29000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQhCZEJZ9BeN_0XhpDz1lXxdMEBRemGbGiUfaJXkxerej0i1FZR", description: "Madara figura de acción", size: "29 cm" },
+                { name: "Kakashi Hatake", price: 33000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEPwz9jTGiTCTO7zr5q79Ghcq66_nu6lgMms21b7alRTopg27a", description: "Kakashi Hatake figura de acción", size: "33 cm" },
+                { name: "Itachi Uchiha", price: 34000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSTcuLeea3nR7KwDoEUDpZjzBaQMg6fPMx9V_p0TczMFDNoHR7t", description: "Itachi Uchiha figura de acción", size: "34 cm" },
+                { name: "Minato  Namikaze", price: 31000, image: "https://i.pinimg.com/564x/24/69/fb/2469fb83931f0298ca85435643d542f3.jpg", description: "Minato  Namikaze figura de acción", size: "31 cm" },
+                { name: "Obito Uchiha", price: 32000, image: "https://i.pinimg.com/736x/8a/f9/e5/8af9e593aa5e448bdc28c34da4788c61.jpg", description: "Obito Uchiha figura de acción", size: "32 cm" },
+                { name: "Pain", price: 29000, image: "https://i.pinimg.com/564x/ad/fc/8b/adfc8b6de6faaf7823502fb79a45a00b.jpg", description: "Pain figura de acción", size: "29 cm" },
+                { name: "jiranga", price: 33000, image: "https://i.pinimg.com/564x/7a/fc/89/7afc895ca69fcea8e8251fabeff6b2d4.jpg", description: "Jiraga Hatake figura de acción", size: "33 cm" },
+                { name: "Garaa", price: 34000, image: "https://i.pinimg.com/564x/14/7d/48/147d483097d6374cf2eb33dc045b08c5.jpg", description: "Garaa figura de acción", size: "34 cm" },
+                { name: "Hashirama Senju", price: 33000, image: "https://i.pinimg.com/564x/86/07/82/8607829f3b014a5c01308113b1db5518.jpg", description: "Hashirama Senju figura de acción", size: "33 cm" },
+                { name: "Sai", price: 34000, image: "https://i.pinimg.com/564x/3f/c9/3a/3fc93a8959b5ba1018dbc0478b9feb63.jpg", description: "Sai figura de acción", size: "34 cm" }
+            ],
+            one_piece: [
+                { name: "Monkey D. Luffy", price: 30000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRLHwD8SeD42eAGwQ3ClzkXK-L4XBxqnBU7dP06QLs29ThOXmTa", description: "Monkey D. Luffy figura de acción", size: "30 cm" },
+                { name: "Roronoa Zoro", price: 32000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQlbdcgHQPj56eZbV7ekngMuzfK_Ia8A1xR5AWv6wLfnrrgQ-T4", description: "Roronoa Zoro figura de acción", size: "32 cm" },
+                { name: "Ace", price: 31000, image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcReQdCUqF5s6GPljodSDeXhtFH2qtTkf0tV1Pc8m51YzdlkzvWx", description: "Ace figura de acción", size: "31 cm" },
+                { name: "Sanji", price: 33000, image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRtxqYeDG3gF5z6FusodgrDBL6cEZpmsAZqbiGIlU9fUm5LTEtH", description: "Sanji figura de acción", size: "33 cm" },
+                { name: "Chooper y Usopp", price: 29000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1cTdHKma2CJfSCiwuCk3PZIlglmWuEhhUbktooOH2N1KwPr22", description: "Usopp figura de acción", size: "29 cm" },
+                { name: "Barba Blanca", price: 30000, image: "https://i.pinimg.com/564x/4f/67/53/4f67535700f2cb9a9e1563919e73a683.jpg", description: "Barba Blanca figura de acción", size: "30 cm" },
+                { name: "Law", price: 32000, image: "https://i.pinimg.com/564x/fc/8b/8c/fc8b8c78717369f643d6a4917ed4d5d4.jpg", description: "Law figura de acción", size: "32 cm" },
+                { name: "Barba Negra", price: 31000, image: "https://i.pinimg.com/564x/b5/fa/52/b5fa52d8b47d0a3d1a019ed9f9d5e8b5.jpg", description: "Barba Negra figura de acción", size: "31 cm" },
+                { name: "BIG Mon", price: 33000, image: "https://i.pinimg.com/564x/f8/aa/b0/f8aab0e2a44d4b7b949e2b90e5940878.jpg", description: "Big Mon figura de acción", size: "33 cm" },
+                { name: "Gol.D.Roger", price: 29000, image: "https://i.pinimg.com/564x/a8/d5/c3/a8d5c393c13e259cb4233bc6696d98f0.jpg", description: "Gol.D.Roger figura de acción", size: "29 cm" },
+                { name: "Shanks", price: 33000, image: "https://i.pinimg.com/564x/ca/dd/5c/cadd5c49a863de4dde7ebdcb51648fe6.jpg", description: "Shanks figura de acción", size: "33 cm" },
+                { name: "Doflamingo", price: 29000, image: "https://i.pinimg.com/564x/ee/93/f1/ee93f1b3a2dffc2282ac29645fe628fa.jpg", description: "Doflamingofigura de acción", size: "29 cm" }
+            ],
+            star_wars: [
+                { name: "Casco de Stronluve", price: 34000, image: "https://i.pinimg.com/564x/c9/21/a8/c921a8df77b0c231751c4dd6ec66ee52.jpg", description: "Luke Skywalker figura de acción", size: "34 cm" },
+                { name: "Darth Vader", price: 35000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSZw3JIcoFuCuPXyA4wtKaY3dzX1XSojCePgyyICIAVi3Aqdnz8", description: "Darth Vader figura de acción", size: "35 cm" },
+                { name: "yucaca", price: 32000, image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRSzYrygHg5w8BQ3u6_TugjrNQUM-9UloyC64C8F7J9q5Wb5CEQ", description: "Princess Leia figura de acción", size: "32 cm" },
+                { name: "R2_D2", price: 33000, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ_-rgezhXsEFucDUKMT9Zg7m-2c8A6U4wQkWpf2Kg7uf9LhicL", description: "Han Solo figura de acción", size: "33 cm" },
+                { name: "Yoda", price: 31000, image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS7KLBR7K41nufoVt9zLrdNHZZ1qrWnoAMC8ivmrTgctEwoAZAr", description: "Yoda figura de acción", size: "31 cm" },
+                { name: "Kylo Rem", price: 31000, image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSm2Mzia6hSNfM3N8rG1wK-t_nPYJ2Sqw5sBnbqV6N5x7Tmc5z2", description: "kylo Rem figura de acción", size: "31 cm" }
+            ]
+        };
+
+        function loadCategory(category) {
+            const figuresContainer = document.getElementById('figures');
+            figuresContainer.innerHTML = '';
+
+            figures[category].forEach(figure => {
+                const figureDiv = document.createElement('div');
+                figureDiv.className = 'figure';
+                figureDiv.innerHTML = `
+                    <img src="${figure.image}" alt="${figure.name}">
+                    <h3>${figure.name}</h3>
+                    <p>Precio: $${figure.price}</p>
+                    <div class="button-container">
+                        <button id="aaa" onclick='openModal("${category}", "${figure.name}")'>Descripción</button>
+                        <button id="aaa" onclick='addToCart("${category}", "${figure.name}",)'>Añadir al Carrito</button>
+                    </div>
+                `;
+                figuresContainer.appendChild(figureDiv);
+            });
+        }
+
+        function openModal(category, figureName) {
+            currentFigure = { category, name: figureName };
+            const figure = figures[category].find(f => f.name === figureName);
+            if (figure) {
+                document.getElementById('modal-image').src = figure.image;
+                document.getElementById('modal-title').textContent = figure.name;
+                document.getElementById('modal-description').textContent = figure.description;
+                document.getElementById('modal-size').textContent = figure.size;
+                document.getElementById('modal-price').textContent = `$${figure.price}`;
+                document.getElementById('figureModal').style.display = 'flex';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('figureModal').style.display = 'none';
+        }
+
+        function addToCart(category, figureName) {
+            const figure = figures[category].find(f => f.name === figureName);
+            if (figure) {
+                const quantity = 1; // Puedes ajustar esto para permitir seleccionar la cantidad
+                const item = cart.find(i => i.name === figure.name);
+                if (item) {
+                    item.quantity += quantity;
+                    notificacion();
+                } else {
+                    cart.push({ ...figure, quantity });
+                }
+                updateCart();
+            } notificacion();
+        }
+
+        function addToCartFromModal() {
+            if (currentFigure) {
+                const quantity = parseInt(document.getElementById('quantity').value, 10);
+                const figure = figures[currentFigure.category].find(f => f.name === currentFigure.name);
+                if (figure) {
+                    const item = cart.find(i => i.name === figure.name);
+                    if (item) {
+                        item.quantity += quantity;
+                        notificacion();
+                    } else {
+                        cart.push({ ...figure, quantity });
+
+                    }
+                    updateCart();
+                    notificacion();
+                }
+                closeModal();
+            }
+        }
+        function notificacion() {
+            Swal.fire({
+                position: "center", // Cambia la posición al centro de la pantalla
+                imageUrl: 'https://cdn-icons-gif.flaticon.com/6416/6416376.gif', // Icono personalizado
+                imageWidth: 200,
+                imageHeight: 200,
+                title: "<span style='color: #4caf50; font-size: 20px; font-weight: bold;'>Producto añadido al carrito</span>", // Estilo mejorado del título
+                background: '#ffffff', // Color de fondo de la alerta
+                backdrop: `rgba(0, 0, 0, 0.6)`, // Fondo transparente oscuro detrás de la alerta
+                timerProgressBar: true, // Barra de progreso del temporizador
+                showConfirmButton: false,
+                timer: 2000,
+
+            });
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            total = 0;
+
+            cart.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td style="width: 200px; text-align: center;">
+                <img src="${item.image}" alt="${item.name}" style="width: 150px; height: 150px; object-fit: contain;">
+            </td>
+            <td>${item.name}</td>
+            <td>$${item.price}</td>
+            <td>
+                <button onclick="changeQuantity('${item.name}', -1)">-</button>
+                ${item.quantity}
+                <button onclick="changeQuantity('${item.name}', 1)">+</button>
+            </td>
+            <td>$${item.price * item.quantity}</td>
+            <td><button onclick="removeFromCart('${item.name}')">Eliminar</button></td>
+        `;
+                cartItems.appendChild(row);
+                total += item.price * item.quantity;
+            });
+
+            document.getElementById('total').textContent = `$${total}`;
+        }
+
+
+        function changeQuantity(name, amount) {
+            const item = cart.find(i => i.name === name);
+            if (item) {
+                item.quantity += amount;
+                if (item.quantity <= 0) {
+                    removeFromCart(name);
+                } else {
+                    updateCart();
+                }
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(i => i.name !== name);
+            updateCart();
+        }
+
+
+        function eleminar() {
+            cart = [];
+            updateCart();
+        }
+
+        function clearCart() {
+            if (cart.length > 0) {  // Verifica si hay productos en el carrito
+                Swal.fire({
+                    title: "¿Estás seguro de que deseas vaciar tu carrito?",
+                    text: "Esta acción eliminará todos los productos de tu carrito.",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonText: "Sí, vaciar carrito",
+                    cancelButtonText: "No, mantener productos",
+                    reverseButtons: true,
+                    background: '#f8f9fa',
+                    backdrop: `rgba(0, 0, 0, 0.5)`,
+                    iconColor: '#ffc107'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        cart = [];
+                        updateCart();
+                        Swal.fire({
+                            title: "Carrito Vacío",
+                            text: "Tu carrito ha sido vaciado con éxito.",
+                            icon: "success",
+                            confirmButtonText: "Aceptar",
+                            background: '#f8f9fa',
+                            iconColor: '#28a745'
+                        });
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        Swal.fire({
+                            title: "Acción Cancelada",
+                            text: "Tus productos siguen en el carrito.",
+                            icon: "info",
+                            confirmButtonText: "Entendido",
+                            background: '#f8f9fa',
+                            iconColor: '#17a2b8'
+                        });
+                    }
+                });
+            } else {
+                // Si el carrito está vacío, no se muestra ningún mensaje
+                console.log("El carrito ya está vacío.");
+            }
+        }
+
+
+        function confirmPurchase() {
+            if (cart.length > 0) {
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-primary",
+                        cancelButton: "btn btn-outline-secondary"
+                    },
+                    buttonsStyling: false
+                });
+
+                swalWithBootstrapButtons.fire({
+                    title: "¿Estás seguro de confirmar la compra?",
+                    text: "¡No te pierdas nuestras ofertas! ¿Quieres agregar más productos?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Confirmar Compra",
+                    cancelButtonText: "No, seguir comprando",
+                    reverseButtons: true,
+                    background: '#f8f9fa',
+                    backdrop: `rgba(0, 0, 0, 0.5)`,
+                    iconColor: '#dc3545'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        swalWithBootstrapButtons.fire({
+                            title: "¡Compra Confirmada!",
+                            text: "Tus productos han sido confirmados exitosamente. ¡Gracias por tu compra!",
+                            icon: "success",
+                            background: '#f8f9fa',
+                            confirmButtonText: "Aceptar",
+                            iconColor: '#28a745'
+                        });
+
+                        eleminar();
+
+                        // Muestra una notificación de compra
+                        showNotification("¡Compra realizada exitosamente! Tu entrega demorará aproximadamente 3 días.", "success");
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        swalWithBootstrapButtons.fire({
+                            title: "Compra Cancelada",
+                            text: "Puedes seguir explorando y agregar más productos a tu carrito.",
+                            icon: "info",
+                            background: '#f8f9fa',
+                            confirmButtonText: "Entendido",
+                            iconColor: '#17a2b8'
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    position: "center",
+                    imageUrl: 'https://cdn-icons-png.flaticon.com/512/11329/11329060.png',
+                    imageWidth: 200,
+                    imageHeight: 200,
+                    title: "<span style='color: #dc3545; font-size: 20px; font-weight: bold;'>Tu carrito está vacío</span>",
+                    text: "Añade productos al carrito antes de confirmar la compra.",
+                    background: '#ffffff',
+                    backdrop: `rgba(0, 0, 0, 0.6)`,
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true
+                });
+            }
+        }
+
+        function showNotification(message, type) {
+            const notificationContainer = document.getElementById('notification-container');
+
+            // Crear un nuevo elemento de notificación
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+        <p>${message}</p>
+        <span class="close-notification">&times;</span>
+    `;
+
+            // Agregar la notificación al contenedor
+            notificationContainer.appendChild(notification);
+
+            // Agregar funcionalidad para cerrar la notificación
+            notification.querySelector('.close-notification').addEventListener('click', function () {
+                notificationContainer.removeChild(notification);
+            });
+
+            // Mostrar el modal si no está visible
+            const notificationModal = document.getElementById('notificationsModal');
+            if (notificationModal.style.display !== 'block') {
+                notificationModal.style.display = 'block';
+            }
+        }
+
+
+
+
+
+        function showCatalog() {
+            document.getElementById('catalog').style.display = 'flex';
+            document.getElementById('cart').style.display = 'none';
+            loadCategory('Marvel'); // Cargar una categoría por defecto al inicio
+        }
+
+        function showCart() {
+            document.getElementById('catalog').style.display = 'none';
+            document.getElementById('cart').style.display = 'block';
+
+        }
+
+        function hideCart() {
+            document.getElementById('catalog').style.display = 'flex';
+            document.getElementById('cart').style.display = 'none';
+        }
+
+        // Mostrar el catálogo por defecto al cargar la página
+        window.onload = showCatalog;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Variables para los modales
+            var catalogModal = document.getElementById('catalogModal');
+            var notificationsModal = document.getElementById('notificationsModal');
+            var profileModal = document.getElementById('profileModal');
+
+            // Funciones para mostrar los modales
+            function showModal(modal) {
+                modal.style.display = 'block';
+            }
+
+            // Funciones para ocultar los modales
+            function closeModal(modal) {
+                modal.style.display = 'none';
+            }
+
+            // Event Listeners para abrir los modales
+
+            document.getElementById('show-cart').addEventListener('click', function () {
+                showCart();
+            });
+
+            document.getElementById('show-catalog').addEventListener('click', function () {
+                showCatalog();
+            });
+
+            document.getElementById('fix').addEventListener('click', function () {
+                showModal(catalogModal);
+            });
+
+            document.getElementById('show-notifications').addEventListener('click', function () {
+                showModal(notificationsModal);
+            });
+
+            document.getElementById('show-profile').addEventListener('click', function () {
+                showModal(profileModal);
+            });
+
+            // Event Listeners para cerrar los modales
+            document.getElementById('close-catalog').addEventListener('click', function () {
+                closeModal(catalogModal);
+            });
+
+            document.getElementById('close-notifications').addEventListener('click', function () {
+                closeModal(notificationsModal);
+            });
+
+            document.getElementById('close-profile').addEventListener('click', function () {
+                closeModal(profileModal);
+            });
+
+            // Cerrar los modales si se hace clic fuera del contenido del modal
+            window.addEventListener('click', function (event) {
+                if (event.target === catalogModal) {
+                    closeModal(catalogModal);
+                } else if (event.target === notificationsModal) {
+                    closeModal(notificationsModal);
+                } else if (event.target === profileModal) {
+                    closeModal(profileModal);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
